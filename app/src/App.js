@@ -15,12 +15,12 @@ function App(props) {
       dispatch(getData())
   };
 
+
+
   return (
     <div className="App">
-     <h1>React Redux App</h1>
-     <button onClick={handleClick}>Click</button>
-
-
+      <button onClick={handleClick}>Bark</button>
+      <img src={data} alt="dog"></img>
     </div>
   );
 }
@@ -28,7 +28,7 @@ const mapStateToProps = state => {
   return { 
     data: state.data,
     isFetching: state.isFetching,
-    errors: state.error
+    errors: state.errors
   }
 };
 export default connect(mapStateToProps)(App);
